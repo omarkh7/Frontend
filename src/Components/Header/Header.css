@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 0.2fr 1.5fr;
   border: 1px solid #1b2931;
+  width: 100%;
 }
 
 a{
