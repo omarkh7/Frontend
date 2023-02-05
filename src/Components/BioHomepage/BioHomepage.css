@@ -44,6 +44,11 @@ p {
 }
 
 button {
+  border: none;
+  width: fit-content;
+  margin-left: -15px;
+}
+button > a {
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
@@ -55,7 +60,6 @@ button {
   transition: all 0.3s linear;
   text-shadow: 0 0 0px;
   font-weight: 500;
-  width: 50%;
 }
 .fleximg {
   display: flex;

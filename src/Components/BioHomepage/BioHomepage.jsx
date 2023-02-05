@@ -1,6 +1,8 @@
 import React from "react";
 import img1 from "../../assets/ahmad-laptop.jpg";
 import "./BioHomepage.css";
+import { Link } from "react-router-dom";
+
 function BioHomepage() {
   return (
     <section className="home">
@@ -18,7 +20,10 @@ function BioHomepage() {
                 <br></br>
                 Managing Director at Resecurity ®.
               </p>
-              <button> Biography</button>
+              <button>
+                {" "}
+                <Link to="/biography">Check Full Biography</Link>{" "}
+              </button>
             </div>
           </div>
           <div className="fleximg">
