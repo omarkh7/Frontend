@@ -1,0 +1,171 @@
+.navbar ul {
+  font-size: 14px;
+  padding-left: 50px;
+  margin: auto;
+  border-left: 1px solid #1b2931;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s linear;
+}
+
+li {
+  color: #ffffff;
+  list-style-type: none;
+  display: inline-block;
+  line-height: 34px;
+  transition: all 0.4s linear;
+  position: relative;
+}
+
+/* ==========================TOPBAR=================================== */
+
+.navbar .topbar-ul {
+  display: flex;
+  justify-content: end;
+  border: 1px solid #1b2931;
+  margin: auto;
+}
+
+.navbar .topbar-ul a {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  color: #457383;
+  text-decoration: none;
+}
+.navbar .topbar-ul a:hover {
+  color: #ffffff;
+}
+
+/* ==========================END TOPBAR============================== */
+
+/* ========================NAVBAR================================ */
+nav > .navbar > ul.links > li > a .navbar ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 48px;
+}
+
+.navbar ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0 10px;
+}
+
+nav > ul.links > li > a:before,
+nav > ul.links > li > a:after {
+  content: "";
+  position: absolute;
+  margin: -6px 0px;
+  width: 0%;
+  border: 0.5px dotted #6ad3b1;
+  visibility: hidden;
+  transition: all 0.4s linear;
+}
+
+nav > ul.links > li > a:after {
+  left: 0;
+  bottom: -10px;
+}
+nav > ul.links > li > a:before {
+  right: 0;
+  top: -10px;
+}
+
+nav > ul.links > li > a:hover {
+  color: #6ad3b1;
+}
+
+nav > ul.links > li > a:hover:after,
+nav > ul.links > li > a:hover:before {
+  width: 100%;
+  visibility: visible;
+}
+
+.navbar .links {
+  list-style: none;
+  display: flex;
+  color: #d9d2c3;
+  cursor: pointer;
+}
+
+.navbar .links li {
+  margin: 0 15px;
+  font-size: 14px;
+  padding: 5px;
+}
+/* =============================END NAVBAR ==============================*/
+
+/* ====================TOOGLE ICON========================= */
+.navbar .toggle-icon {
+  display: none;
+}
+/* ==================== END TOOGLE ICON========================= */
+
+/* =================================MOBILE VERSION================================== */
+
+@media (max-width: 768px) {
+  nav > ul.links > li > a:hover:after,
+  nav > ul.links > li > a:hover:before {
+    visibility: hidden;
+  }
+
+  .navbar {
+    position: relative;
+    transition: 0.5s all ease-in-out;
+  }
+
+  .navbar.expanded {
+    height: 90vh;
+  }
+
+  .navbar.expanded .links {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+  .navbar.expanded .topbar-ul {
+    position: unset;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    display: block;
+    opacity: 1;
+    text-align: center;
+  }
+  .navbar.expanded .links li,
+  .navbar.expanded .topbar-ul li {
+    font-size: 20px;
+  }
+
+  .navbar .toggle-icon {
+    display: block;
+    color: #d9d2c3;
+    position: absolute;
+    right: 14px;
+    margin-top: -40px;
+  }
+
+  .navbar .links,
+  .navbar .topbar-ul {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    padding: 0;
+  }
+}
+
+/* ================================= END MOBILE VERSION================================== */

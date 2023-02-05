@@ -3,7 +3,7 @@ import React from 'react'
 function Achievements() {
   return (
     <div>
-      
+      Achievements
     </div>
   )
 }
