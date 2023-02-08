@@ -94,7 +94,7 @@ export default function SignUp() {
             </button>
           </div>
           <p className="href--">
-            Already registered <a href="/login-admin">sign in?</a>
+            Already registered <a href="/login-admin"> sign in?</a>
           </p>
         </form>
       </div>

@@ -63,7 +63,7 @@ function Login() {
 
         <div>
           <button className="button--" type="submit">
-            Submit
+           Log In
           </button>
         </div>
         <p className="href--">
