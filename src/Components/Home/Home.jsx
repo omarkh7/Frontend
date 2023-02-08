@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
 
 
-function HomePage() {
+function Home() {
 
   const [alldata, setAllData] = useState([]);
 
@@ -77,7 +77,6 @@ function HomePage() {
 ))}
 
     </div>
-    {/* <div><p className='dotted'></p> </div> */}
   </div>
 
   {/* Acknowledgments */}
@@ -245,8 +244,7 @@ function HomePage() {
               
                
               </div>
-              <a className="ReadFullWriteup" href={info.info_url}>Read Full Writeup</a>
-                
+              <a className="ReadFullWriteup" href={info.info_url}>Read Full Writeup</a>     
             
           </div>
 
@@ -255,7 +253,6 @@ function HomePage() {
       ))}
       <a  className="seemore1" href="/Writeups" target="_blank" >See More</a>
 
-
   </div>
   </div>
   </div>
@@ -263,4 +260,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default Home

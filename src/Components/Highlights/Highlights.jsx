@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
 
 
-function AllHighlights() {
+function Highlights() {
 
   const [alldata, setAllData] = useState([]);
 
@@ -84,4 +84,4 @@ function AllHighlights() {
   )
 }
 
-export default AllHighlights
+export default Highlights

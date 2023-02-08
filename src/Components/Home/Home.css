@@ -1,10 +1,10 @@
-body{
+/* .homebody{
    
     font-family: "Archivo", sans-serif;
     text-align: center;
     background: #11171D;
    
-}
+} */
 .Achievement{
 padding:  40px 0px;
 border-bottom: 1px  #6ad3b27a dashed;
@@ -675,17 +675,7 @@ width :64px;
     transition: all 0.5s linear;
   }
   
-  .row2::after {
-    position:absolute;
-    content:'';
-    width: 20%;
-    height:263px;
-    background: #6ad3b1;
-    margin-top:-200px;
-    right:-2px;
-    z-index: -1;
-    transition: all 0.5s linear;
-  }
+
   
   .row2:hover.row2::before,
   .row2:hover.row2::after{

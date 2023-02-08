@@ -4,17 +4,13 @@
     font-family: "Archivo", sans-serif;
 }
 
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-
-.title{
+.titlebio{
     color: #6ad3b1;
     font-size: 30px;
     text-shadow: 0 0 5px;
 }
 
-.content{
+.contentbio{
     color: white ;
     padding-bottom: 20px;
     /* border-bottom: 1px dashed rgba(106, 211, 177, 0.31); */
@@ -36,10 +32,15 @@
     font-weight: 100;
 }
 
-
-
-@media only screen and (max-width: 600px) {
-    .title {
-        font-size: 20px;
+@media only screen and (max-width: 768px) {
+    .body {
+      padding: 10px 5px;
     }
-}
+    
+    .titlebio {
+      font-size: 20px;
+    }
+  }
+  
+
+

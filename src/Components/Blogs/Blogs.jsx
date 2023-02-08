@@ -35,13 +35,13 @@ function Blogs() {
   return (
     <>
    
-    <div className="bodyb">
+    <div className="bodyblog">
      <p className="title">Blogs</p>
 
      {
-    <div className="Certification">
+    <div className="blog">
 
-      <div className="containerCertification">
+      <div className="containerBlog">
         <div className="container">
         {data.map((item,index) =>{
           return(
