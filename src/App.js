@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, } from "react-router-dom";
 
 // import Biography from './Components/Biography/Biography.jsx';
 
-// import Blogs from './Components/Blogs/Blogs.jsx';
+//  import Blogs from './Components/Blogs/Blogs.jsx';
 // import './Components/Certification/Certification'
 
 // import Modals from './Components/BioHomepage/BioHomepage';
@@ -35,6 +35,7 @@ function App() {
 <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomePage/>}></Route>
+      {/* <Route path="/" element={<Blogs/>}></Route> */}
       <Route path="/Certification" element={<AllCertifications/>}></Route>
       <Route path="/Highlights" element={<AllHighlights/>}></Route>
       <Route path="/Writeups" element={<AllWriteups/>}></Route>
