@@ -1,23 +1,11 @@
-import './App.css';
-import Achievement from './Components/Achievements/Achievements';
-import Acknowledgments from './Components/Acknowledgments/Acknowledgments';
-import Certification from './Components/Certification/Certification';
-import Highlights from './Components/Highlights/Highlights';
-import Home from './Components/Home/Home';
-import Writeups from './Components/Writeups/Writeups';
-
-
+import "./App.css";
+import Home from "./Components/Home/Home";
 
 function App() {
   return (
-  
-    <div >
-
-  <Home/>
- 
-  
-  
- </div>
+    <div>
+      <Home />
+    </div>
   );
 }
 

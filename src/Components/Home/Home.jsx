@@ -216,14 +216,14 @@ function Home() {
       <div className="all1">
         <p className="title">Writeups</p>
         <div className="container1">
-          <div className="row1">
+          <div className="row2">
             <img
               className="gglimeg"
               src="https://ahmadhalabi.net/wp-content/uploads/2020/10/google.png"
               alt=""
             ></img>
 
-            <div className="shadow"></div>
+            <div className="shadow1" ></div>
             <div className="textwidget1">
               <p>IDOR in Google APIs</p>
               <p>Reported to Google – Published On: 10 Jun 2020</p>
