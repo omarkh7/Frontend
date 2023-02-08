@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
 
 
-function AllWriteups() {
+function Writeups() {
 
   const [alldata, setAllData] = useState([]);
 
