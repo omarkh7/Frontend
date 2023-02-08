@@ -1,0 +1,46 @@
+.bodyi{
+    padding: 300px;
+    background-color: #11171d;
+    font-family: "Archivo", sans-serif;
+}
+
+.titlebio{
+    color: #6ad3b1;
+    font-size: 30px;
+    text-shadow: 0 0 5px;
+}
+
+.contentbio{
+    color: white ;
+    padding-bottom: 20px;
+    /* border-bottom: 1px dashed rgba(106, 211, 177, 0.31); */
+    margin-bottom: 10px;
+}
+.contentW{
+    color: white ;
+    padding-bottom: 7px;
+    font-weight: 100;
+    /* border-bottom: 1px dashed rgba(106, 211, 177, 0.31); */
+    
+}
+.dotted{
+    border-bottom: 1px dashed rgba(106, 211, 177, 0.31);
+}
+.link{
+    color: white ;
+    padding-bottom: 15px;
+    font-weight: 100;
+}
+
+@media only screen and (max-width: 768px) {
+    .bodyi {
+      padding: 10px 5px;
+    }
+    
+    .titlebio {
+      font-size: 20px;
+    }
+  }
+  
+
+

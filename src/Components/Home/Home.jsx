@@ -1,73 +1,106 @@
-import React from "react";
-import BioHomepage from "../BioHomepage/BioHomepage";
+import React from 'react'
 import "./Home.css";
+import { useState } from 'react'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { Link, useParams } from "react-router-dom";
+import BioHomepage from '../BioHomepage/BioHomepage';
+
 
 function Home() {
+
+  const [alldata, setAllData] = useState([]);
+
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setShowModal(false);
+  };
+
+  const handleOpen = (imgSrc) => {
+    setModalImage(imgSrc);
+    setShowModal(true);
+  };
+
+
+  const apiURL = 'http://localhost:5000/info';
+
+
+  const fetchallData = async () => {
+    try {
+      const response = await axios.get(apiURL);
+      console.log(response.data);
+      setAllData(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+
+    fetchallData();
+
+  }, []);
+
   return (
-    <>
-      <div className="all">
-        <p className="title">Achievement</p>
-        <div className="container">
-          {/* 11111 */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>
+    <div>
+      <BioHomepage/>
+        {/* Achievements */}
+    <div className="all">
+    <p className="titleee">Achievements</p>
+    <div className="container-home">
 
-              {/* <img  className="secondImage"
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt="" 
-              ></img>  */}
-            </div>
-            <div className="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
-          </div>
+    {alldata.filter(info => info.info_category[0] === 'Achievements').slice(0,6).map((info, index) => (
 
-          {/*   2222   */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>
-            </div>
-            <div className="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
+
+    <div key={info._id}>
+
+    <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
-          <a className="seemore" href="#">
-            See More
-          </a>
-          {/* close of class container*/}
+          <div className="top-home"></div>
+        <div className="content-home">
+          <p>{info.info_description}</p>
         </div>
+    </div>
+    
+</div>
+))}
 
-        {/* close of class all */}
-      </div>
+    </div>
+  </div>
 
-      {/*--------------------- class acknowlogment-------------------------------- */}
-      <div className="all1">
-        <p className="title">Acknowlegments</p>
+  {/* Acknowledgments */}
+
+  <div className="all1">
+        <p className="titleee">Acknowlegments</p>
         <div className="container1">
-          <div className="textwidget">
-            <p>
+          <div >
+            <p className="textwidget-home">
               Got Acknowledged by more than 200 Well Known Companies for
               Reporting Security Vulnerabilities in their Online Services and
               Products.
             </p>
-            <p>
+            <p className="textwidget-home">
               Acknowledgements include Rewards, Certificates, Hall Of Fame and
               Swags.
             </p>
-            <p>Some Of My Top Acknowledgements</p>
+            <p className="textwidget-home">Some Of My Top Acknowledgements</p>
           </div>
-
-          <div className="row1">
-            <div className="boxImg1">
+          
+            <div className="row1">
+              <div className="boxImg1">
               <img
                 className="imeg1"
                 src="https://ahmadhalabi.net/wp-content/uploads/2020/10/United-States-Department-Of-Defense-1-300x100-1.png"
@@ -88,9 +121,9 @@ function Home() {
                 src="https://ahmadhalabi.net/wp-content/uploads/2020/10/linkedin-1-300x78-1.png"
                 alt=""
               ></img>
-            </div>
-            <div className="shadow"></div>
-            <div className="boxImg2">
+              </div>
+              <div className="shadow" ></div>
+              <div className="boxImg2">
               <img
                 className="imeg2"
                 src="https://ahmadhalabi.net/wp-content/uploads/2020/10/ibm_logo-300x121-1.png"
@@ -111,143 +144,122 @@ function Home() {
                 src="https://ahmadhalabi.net/wp-content/uploads/2020/10/51-Apple-300x169-1.png"
                 alt=""
               ></img>
+                </div>
             </div>
-          </div>
-
-          <a className="seemore1" href="#">
-            See More
-          </a>
+            
+         
+          {/* <a  className="seemore-ack" href="#">See More</a> */}
           {/* close of class containerAcknowlegments*/}
         </div>
-
-        {/* close of class Acknowlegments */}
-      </div>
-      {/* -------------------------------end acknowlogment-------------- */}
-
-      {/* ------------------------------ Class Certification------------ */}
-      <div className="all">
-        <p className="title">Certification</p>
-        <div className="container">
-          {/* 11111 */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>{" "}
-            </div>
-            <div className="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
-          </div>
-
-          {/*   2222   */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>{" "}
-            </div>
-            <div className="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
-          </div>
-          <a className="seemore" href="#">
-            See More
-          </a>
-
-          {/* close of class container*/}
         </div>
+{/* Certifications */}
+  <div className="all">
+        <p className="titleee">Certifications</p>
+        <div className="container-home-cert">
 
-        {/* close of class certification */}
-      </div>
-
-      {/* ------------- -----end Certification --------------------- */}
-
-      {/* --------------------Class Highlights--------------------- */}
-      <div className="all">
-        <p className="title">Highlights</p>
-        <div className="container">
-          {/* box1 */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>{" "}
-            </div>
-            <div class="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
+        {alldata.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(info => info.info_category[0] === 'Certifications') .slice(0, 2).map((info, index) => (
+ <div key={info._id}>
+   <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
-
-          {/*   box2   */}
-          <div className="row">
-            <div className="box-img">
-              <img
-                src="https://ahmadhalabi.net/wp-content/uploads/2021/08/US-Dept-Of-Defense-Rank-1-1-1024x502.png"
-                alt=""
-              ></img>{" "}
-            </div>
-            <div class="top"></div>
-            <div className="content">
-              <p>1st Rank in U.S. Dept of Defense</p>
-            </div>
-          </div>
-
-          {/* button see more */}
-          <a class="seemore" href="#">
-            See More
-          </a>
-
-          {/* close of class container*/}
+          <div className="top-home"></div>
+        <div className="content-home">
+          <p>{info.info_description}</p>
         </div>
+        <br/>  <br/>
+        
+    </div>
+    
+</div>
+))}
+<a className="btncert" href="/Certification" target="_blank">See More</a>
 
-        {/* close of class all */}
-      </div>
-      {/* -------------------end highlights----------------------------- */}
+ </div>
+ 
+    {/* <div><p className='dotted'></p> </div> */}
+  </div>
 
-      {/* ------------------Class writeups------------------------------ */}
+  {/* Highlights */}
 
-      <div className="all1">
-        <p className="title">Writeups</p>
+  <div className="all-high">
+        <p className="titleee">Highlights</p>
+        <div className="container-home-high">
+
+        {alldata.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(info => info.info_category[0] === 'Highlights').slice(0,4).map((info, index) => (
+ <div key={info._id}>
+   <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="top-home"></div>
+        {/* <div className="contentC">
+          <p>{info.info_description}</p> </div> */}
+        </div>
+        <br/>  <br/>
+    </div>
+  
+))}
+<a  className="seemore-high" href="/Highlights" target="_blank" >See More</a>
+
+ </div>
+    
+  </div>
+
+  {/* Writeups */}
+  <div className="all1">
+        <p className="titleee">Writeups</p>
         <div className="container1">
+        {alldata.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)).filter(info => info.info_category[0] === 'Writeups').slice(0, 1).map((info, index) => (
+ <div key={info._id}>
           <div className="row2">
-            <img
-              className="gglimeg"
-              src="https://ahmadhalabi.net/wp-content/uploads/2020/10/google.png"
-              alt=""
-            ></img>
-
-            <div className="shadow1" ></div>
-            <div className="textwidget1">
-              <p>IDOR in Google APIs</p>
-              <p>Reported to Google – Published On: 10 Jun 2020</p>
-            </div>
-            <a
-              className="ReadFullWriteup"
-              href="https://bugreader.com/ahmad_halabi@idor-in-google-apis-194"
-            >
-              Read Full Writeup
-            </a>
+              
+          <img className="gglimeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+              {showModal && (
+              <div className="modal-containerW" onClick={handleClose}>
+                <div className="modal-write">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
+              <div className="shadow1"></div>
+              <div className="textwidgetWriteups">
+                <p className="textwidgetWriteups">{info.info_title}</p>
+              <p className="textwidgetWriteups">{info.info_description}</p>
+              
+               
+              </div>
+              <a className="ReadFullWriteup" href={info.info_url}>Read Full Writeup</a>     
+            
           </div>
 
-          <a className="seemore1" href="#">
-            See More
-          </a>
-          {/* close of class containerAcknowlegments*/}
-        </div>
-
-        {/* close of class Acknowlegments */}
+    
       </div>
+      ))}
+      <a  className="seemore1" href="/Writeups" target="_blank" >See More</a>
 
-      {/* ---------------------------end writeups---------------------- */}
-    </>
-  );
+  </div>
+  </div>
+  </div>
+
+  )
 }
 
-export default Home;
+export default Home

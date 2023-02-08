@@ -1,0 +1,134 @@
+.signin {
+  width: 500px;
+  margin: 60px auto;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  background-color: unset;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 2em;
+  color: #6ad3b1;
+  text-shadow: 0 0 5px;
+}
+
+.label-- {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  display: block;
+  text-align: left;
+  color: #6ad3b1;
+}
+
+.input--[type="text"],
+.input--[type="email"],
+.input--[type="password"] {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 16px;
+  color: #6ad3b1;
+  background-color: #11171d;
+
+}
+
+.input--[type="email"]:focus,
+.input--[type="text"]:focus,
+.input--[type="password"]:focus {
+  border-bottom: 2px solid #6ad3b1;
+  outline: none;
+}
+
+.button--[type="submit"] {
+  width: 100%;
+  padding: 1em;
+  background-color: #6ad3b1;
+  color: #11171d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.button--[type="submit"]:hover {
+  background-color: #11171d;
+  border: 1px solid #6ad3b1;
+  border-radius: 5px;
+  color: #6ad3b1;
+}
+
+.href-- {
+  text-align: right;
+  margin-top: 1em;
+  font-size: 16px;
+  color: #6ad3b1;
+}
+
+.href-- a {
+  color: #6ad3b1;
+  transition: all 0.5s ease;
+}
+
+.href-- a:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .signin {
+    width: 70%;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 2em;
+  }
+
+  .label-- {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+  }
+
+  .input--[type="email"],
+  .input--[type="password"] {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 16px;
+  }
+
+  .input--[type="email"]:focus,
+  .input--[type="password"]:focus {
+    outline: none;
+  }
+
+  .button--[type="submit"] {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.5s ease;
+  }
+
+  .href {
+    text-align: right;
+    margin-top: 1em;
+    font-size: 16px;
+  }
+
+  .href a {
+    transition: all 0.5s ease;
+  }
+}
