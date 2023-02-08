@@ -4,19 +4,19 @@ import "./Writeups.css";
 function Writeups() {
   return (
     <div>
-      <div className="Writeups">
+      <div className="all1">
         <p className="title">Writeups</p>
-        <div className="containerWriteups">
-          <div className="row2">
+        <div className="container1">
+          <div className="row1">
               
                 <img
-                  className="imeg"
+                  className="gglimeg"
                   src="https://ahmadhalabi.net/wp-content/uploads/2020/10/google.png"
                   alt=""
                 ></img>
               
-              <div className="shadow1"></div>
-              <div className="textwidget">
+              <div className="shadow"></div>
+              <div className="textwidget1">
                 <p>IDOR in Google APIs</p>
                 <p>Reported to Google – Published On: 10 Jun 2020</p>
               </div>

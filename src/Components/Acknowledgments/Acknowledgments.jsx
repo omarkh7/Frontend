@@ -4,9 +4,9 @@ import "./Acknowledgments..css";
 function Acknowledgments() {
   return (
     <>
-      <div className="Acknowlegments">
+      <div className="all1">
         <p className="title">Acknowlegments</p>
-        <div className="containerAcknowlegments">
+        <div className="container1">
           <div className="textwidget">
             <p>
               Got Acknowledged by more than 200 Well Known Companies for
@@ -43,7 +43,7 @@ function Acknowledgments() {
                 alt=""
               ></img>
               </div>
-              <div className="shadow" ></div>
+              <div className="shadow"></div>
               <div className="boxImg2">
               <img
                 className="imeg2"

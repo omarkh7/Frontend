@@ -1,12 +1,12 @@
-import React from 'react'
-import "./Certification.css"
+import React from 'react';
+import '../../Components/Achievements/Achievements.css';
 
 function Certification() {
   return (
     <div>
-      <div className="Certification">
+      <div className="all">
         <p className="title">Certification</p>
-        <div className="containerCertification">
+        <div className="container">
           {/* 11111 */}
           <div className="row">
             <div className="box-img">
