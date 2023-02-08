@@ -10,6 +10,19 @@ function AllHighlights() {
 
   const [alldata, setAllData] = useState([]);
 
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setShowModal(false);
+  };
+
+  const handleOpen = (imgSrc) => {
+    setModalImage(imgSrc);
+    setShowModal(true);
+  };
+
   const apiURL = 'http://localhost:5000/info';
 
 
@@ -41,8 +54,15 @@ function AllHighlights() {
  <div key={info._id}>
    <div className="row" key={index}>
         <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
-
+          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="top"></div>
         {/* <div className="contentC">
@@ -51,7 +71,6 @@ function AllHighlights() {
         <br/>  <br/>
         
     </div>
-   
     
 </div>
 ))}
