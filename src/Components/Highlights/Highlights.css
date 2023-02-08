@@ -1,11 +1,4 @@
-/* body{
 
-  font-family: "Archivo", sans-serif;
-  text-align: center;
-
-  background: #11171D;
- 
-} */
 .Highlights{
 padding: 40px 0px;
 border-bottom: 1px  #6ad3b27a dashed;
@@ -33,6 +26,7 @@ height: 920px;
   border: 1px  #6ad3b27a dashed;
   flex-wrap: wrap;
   position: relative;
+  margin-bottom: 50%;
 }
 
 .box-img {
@@ -45,17 +39,18 @@ height: 920px;
   z-index: 2;
 }
 
-/* img{
-  width: 422.39px;
-  height: 250px; 
-  padding-bottom: 25px;
-  
-} */
+
 .title{
 font-size: 28px;
   margin:0px 0px 40px;
   color: #6ad3b1;
   text-shadow: 0 0 12px;
+  text-align: center;
+}
+.below{
+  text-align: center;
+  font-size: 18px;
+
 }
 .content{
   font-size: 16px;
@@ -64,8 +59,6 @@ font-size: 28px;
   bottom: 10px;
   margin-top: 16px;
 }
-
-
 
 .top{
   position: absolute;

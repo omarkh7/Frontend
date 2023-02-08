@@ -128,7 +128,7 @@ z-index: 9999;
 }
 
 
-.modal-content img {
+.modal-content {
   width: 1000px;
   height: auto;
   position: fixed;
@@ -169,7 +169,7 @@ max-width: 300px;
   margin-left: 0;
   font-size: 13px;
 }
-.modal-content img {
+.modal-content {
   width: 80%;
 }
 .img {

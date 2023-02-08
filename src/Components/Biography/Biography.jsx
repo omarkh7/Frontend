@@ -26,7 +26,7 @@ function Biography() {
 
   return (
     
-    <div className='body'>
+    <div className='bodyi'>
       {/* Brief Info */}
           <h1 className='titlebio'>Brief Info</h1>
       {alldata.filter(info=>info.info_category[0]==='Brief Info').map(info => (
