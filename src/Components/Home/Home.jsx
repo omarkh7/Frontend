@@ -4,6 +4,8 @@ import BioHomepage from '../BioHomepage/BioHomepage'
 function Home() {
   return (
     <div>
+
+
 <BioHomepage/>
     </div>
   )

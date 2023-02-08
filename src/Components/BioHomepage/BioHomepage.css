@@ -43,12 +43,12 @@ p {
   width: 50%;
 }
 
-button {
+.button1 {
   border: none;
   width: fit-content;
   margin-left: -15px;
 }
-button > a {
+.button1 > a {
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
