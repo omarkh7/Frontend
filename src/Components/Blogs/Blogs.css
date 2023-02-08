@@ -119,24 +119,6 @@ transform: scale(1, 20);
 background-color: #6ad3b1;;
 }
 
-.modal-container {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 9999;
-}
-
-
-.modal-content {
-  width: 1000px;
-  height: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
 .img {
   width: 200px;
   height: 200px;
@@ -169,9 +151,7 @@ max-width: 300px;
   margin-left: 0;
   font-size: 13px;
 }
-.modal-content {
-  width: 80%;
-}
+
 .img {
   width: 100px;
   height: 100px;

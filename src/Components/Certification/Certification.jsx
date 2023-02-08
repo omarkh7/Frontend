@@ -45,15 +45,15 @@ function Certification() {
 
   return (
     <div>
-      <div className="Certificationc" >
-        <p className="title">Certifications</p>
-        <div className="containerCertification">
+      <div className="all" >
+        <p className="titleee">Certifications</p>
+        <div className="container-home-cert">
           {alldata.filter(info => info.info_category[0] === 'Certifications').map((info, index) => (
             <div key={info._id}>
-              <div className="row" key={index}>
-                <div className="box-img" >
+              <div className="row-home" key={index}>
+                <div className="box-img-home" >
                   <img
-                    className="box-img"
+                    className="img-home"
                     src={`http://localhost:5000/${info.info_image}`}
                     alt="img"    onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}
                     
@@ -68,8 +68,8 @@ function Certification() {
 
                 {/* onClick={() => handleImageClick(`http://localhost:5000/${info.info_image}`)} */}
                 </div>
-                <div className="top"></div>
-                <div className="contentC">
+                <div className="top-home"></div>
+                <div className="content-home">
                   <p>{info.info_description}</p>
                 </div>
                 <br />
