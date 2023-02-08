@@ -10,6 +10,19 @@ function AllWriteups() {
 
   const [alldata, setAllData] = useState([]);
 
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setShowModal(false);
+  };
+
+  const handleOpen = (imgSrc) => {
+    setModalImage(imgSrc);
+    setShowModal(true);
+  };
+
   const apiURL = 'http://localhost:5000/info';
 
 
@@ -37,8 +50,15 @@ function AllWriteups() {
 <div key={info._id}>
     <div className="row2">
         
-    <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
-        
+    <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
+    onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+        {showModal && (
+              <div className="modal-containerW" onClick={handleClose}>
+                <div className="modal-contentW">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
         <div className="shadow1"></div>
         <div className="textwidget">
           <p>{info.info_title}</p>

@@ -10,6 +10,20 @@ function HomePage() {
 
   const [alldata, setAllData] = useState([]);
 
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setShowModal(false);
+  };
+
+  const handleOpen = (imgSrc) => {
+    setModalImage(imgSrc);
+    setShowModal(true);
+  };
+
+
   const apiURL = 'http://localhost:5000/info';
 
 
@@ -42,8 +56,16 @@ function HomePage() {
 
     <div className="row" key={index}>
         <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
+          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
 
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="top"></div>
         <div className="content">
@@ -138,8 +160,15 @@ function HomePage() {
  <div key={info._id}>
    <div className="row" key={index}>
         <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
-
+          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="top"></div>
         <div className="content">
@@ -168,8 +197,15 @@ function HomePage() {
  <div key={info._id}>
    <div className="row" key={index}>
         <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
-
+          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+{showModal && (
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
           </div>
           <div className="top"></div>
         {/* <div className="contentC">
@@ -193,8 +229,15 @@ function HomePage() {
  <div key={info._id}>
           <div className="row2">
               
-          <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"/>
-              
+          <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+              {showModal && (
+              <div className="modal-containerW" onClick={handleClose}>
+                <div className="modal-write">
+                  <img src={modalImage} alt="Modal Image" />
+                </div>
+              </div>
+            )}
               <div className="shadow1"></div>
               <div className="textwidget">
                 <p>{info.info_title}</p>
