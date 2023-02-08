@@ -47,6 +47,8 @@ p {
   border: none;
   width: fit-content;
   margin-left: -15px;
+  background-color: #11171d;
+
 }
 .button1 > a {
   text-decoration: none;
