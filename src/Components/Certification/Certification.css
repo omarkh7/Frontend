@@ -43,13 +43,13 @@ height: 920px;
   padding-bottom: 25px;
   z-index: 2;
 }
-
+/* 
 img{
   width: 422.39px;
   height: 250px; 
   padding-bottom: 25px;
   
-}
+} */
 .title{
 font-size: 28px;
   margin:0px 0px 40px;
@@ -161,7 +161,7 @@ width:100%;
 }
 
 .modal-content {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 5px;
   padding: 20px;
 }
@@ -175,7 +175,7 @@ width:100%;
 }
 
 
-  .modal-content img {
+  .modal-content {
     width: 1000px;
     height: auto;
     position: fixed;
