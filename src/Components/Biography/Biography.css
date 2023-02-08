@@ -1,4 +1,4 @@
-.body{
+.bodyi{
     padding: 300px;
     background-color: #11171d;
     font-family: "Archivo", sans-serif;
@@ -33,7 +33,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .body {
+    .bodyi {
       padding: 10px 5px;
     }
     

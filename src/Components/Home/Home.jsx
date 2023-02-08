@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
+import BioHomepage from '../BioHomepage/BioHomepage';
 
 
 function Home() {
@@ -44,19 +45,20 @@ function Home() {
 
   return (
     <div>
+      <BioHomepage/>
         {/* Achievements */}
-    <div className="Achievement">
-    <p className="title">Achievements</p>
-    <div className="containerAchievement">
+    <div className="all">
+    <p className="titleee">Achievements</p>
+    <div className="container-home">
 
     {alldata.filter(info => info.info_category[0] === 'Achievements').slice(0,6).map((info, index) => (
 
 
     <div key={info._id}>
 
-    <div className="row" key={index}>
-        <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+    <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
           onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
 
 {showModal && (
@@ -67,8 +69,8 @@ function Home() {
               </div>
             )}
           </div>
-          <div className="top"></div>
-        <div className="content">
+          <div className="top-home"></div>
+        <div className="content-home">
           <p>{info.info_description}</p>
         </div>
     </div>
@@ -81,20 +83,20 @@ function Home() {
 
   {/* Acknowledgments */}
 
-  <div className="Acknowlegments">
-        <p className="title">Acknowlegments</p>
-        <div className="containerAcknowlegments">
-          <div className="textwidget">
-            <p>
+  <div className="all1">
+        <p className="titleee">Acknowlegments</p>
+        <div className="container1">
+          <div >
+            <p className="textwidget-home">
               Got Acknowledged by more than 200 Well Known Companies for
               Reporting Security Vulnerabilities in their Online Services and
               Products.
             </p>
-            <p>
+            <p className="textwidget-home">
               Acknowledgements include Rewards, Certificates, Hall Of Fame and
               Swags.
             </p>
-            <p>Some Of My Top Acknowledgements</p>
+            <p className="textwidget-home">Some Of My Top Acknowledgements</p>
           </div>
           
             <div className="row1">
@@ -146,20 +148,20 @@ function Home() {
             </div>
             
          
-          <a  className="seemore1" href="#">See More</a>
+          {/* <a  className="seemore-ack" href="#">See More</a> */}
           {/* close of class containerAcknowlegments*/}
         </div>
         </div>
 {/* Certifications */}
-  <div className="Certification">
-        <p className="title">Certifications</p>
-        <div className="containerCertification">
+  <div className="all">
+        <p className="titleee">Certifications</p>
+        <div className="container-home-cert">
 
         {alldata.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(info => info.info_category[0] === 'Certifications') .slice(0, 2).map((info, index) => (
  <div key={info._id}>
-   <div className="row" key={index}>
-        <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+   <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
           onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
 {showModal && (
               <div className="modal-container" onClick={handleClose}>
@@ -169,34 +171,34 @@ function Home() {
               </div>
             )}
           </div>
-          <div className="top"></div>
-        <div className="content">
+          <div className="top-home"></div>
+        <div className="content-home">
           <p>{info.info_description}</p>
         </div>
         <br/>  <br/>
         
     </div>
-   
     
 </div>
 ))}
-<a  className="seemore" href="/Certification" target="_blank">See More</a>
+<a className="btncert" href="/Certification" target="_blank">See More</a>
 
  </div>
+ 
     {/* <div><p className='dotted'></p> </div> */}
   </div>
 
   {/* Highlights */}
 
-  <div className="Highlights">
-        <p className="title">Highlights</p>
-        <div className="containerCertification">
+  <div className="all-high">
+        <p className="titleee">Highlights</p>
+        <div className="container-home-high">
 
         {alldata.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(info => info.info_category[0] === 'Highlights').slice(0,4).map((info, index) => (
  <div key={info._id}>
-   <div className="row" key={index}>
-        <div className="box-img">
-          <img className="box-img" src={`http://localhost:5000/${info.info_image}`} alt="img"
+   <div className="row-home" key={index}>
+        <div className="box-img-home">
+          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
           onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
 {showModal && (
               <div className="modal-container" onClick={handleClose}>
@@ -206,7 +208,7 @@ function Home() {
               </div>
             )}
           </div>
-          <div className="top"></div>
+          <div className="top-home"></div>
         {/* <div className="contentC">
           <p>{info.info_description}</p> </div> */}
         </div>
@@ -214,33 +216,33 @@ function Home() {
     </div>
   
 ))}
-<a  className="btnSeemore" href="/Highlights" target="_blank" >See More</a>
+<a  className="seemore-high" href="/Highlights" target="_blank" >See More</a>
 
  </div>
     
   </div>
 
   {/* Writeups */}
-  <div className="Writeups">
-        <p className="title">Writeups</p>
-        <div className="containerWriteups">
+  <div className="all1">
+        <p className="titleee">Writeups</p>
+        <div className="container1">
         {alldata.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)).filter(info => info.info_category[0] === 'Writeups').slice(0, 1).map((info, index) => (
  <div key={info._id}>
           <div className="row2">
               
-          <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
+          <img className="gglimeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
           onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
               {showModal && (
-              <div className="modal-containerW" onClick={handleClose}>
-                <div className="modal-write">
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
                   <img src={modalImage} alt="Modal Image" />
                 </div>
               </div>
             )}
               <div className="shadow1"></div>
-              <div className="textwidget">
-                <p>{info.info_title}</p>
-              <p>{info.info_description}</p>
+              <div className="textwidgetWriteups">
+                <p className="textwidgetWriteups">{info.info_title}</p>
+              <p className="textwidgetWriteups">{info.info_description}</p>
               
                
               </div>
