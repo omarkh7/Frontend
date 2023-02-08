@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
+import BioHomepage from '../BioHomepage/BioHomepage';
 
 
 function Home() {
@@ -44,6 +45,7 @@ function Home() {
 
   return (
     <div>
+      <BioHomepage/>
         {/* Achievements */}
     <div className="Achievement">
     <p className="title">Achievements</p>
