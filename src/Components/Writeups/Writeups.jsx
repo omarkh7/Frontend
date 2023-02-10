@@ -43,35 +43,31 @@ function Writeups() {
 
 
   return(
-  <div className="Writeupss">
-  <p className="title">Writeups</p>
-  <div className="containerWriteups">
+  <div className="all1">
+  <p className="titleee">Writeups</p>
+  <div className="container1">
   {alldata.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)).filter(info => info.info_category[0] === 'Writeups').map((info, index) => (
 <div key={info._id}>
     <div className="row2">
         
-    <img className="imeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
+    <img className="gglimeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
     onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
         {showModal && (
-              <div className="modal-containerW" onClick={handleClose}>
-                <div className="modal-contentW">
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-write">
                   <img src={modalImage} alt="Modal Image" />
                 </div>
               </div>
             )}
         <div className="shadow1"></div>
-        <div className="textwidget">
-          <p>{info.info_title}</p>
-        <p>{info.info_description}</p>
+        <div className="textwidgetWriteups">
+          <p className="textwidgetWriteups">{info.info_title}</p>
+        <p className="textwidgetWriteups">{info.info_description}</p>
         
          
         </div>
         <a className="ReadFullWriteup" href={info.info_url}>Read Full Writeup</a>
-          
-      
     </div>
-
-
 </div>
 ))}
 

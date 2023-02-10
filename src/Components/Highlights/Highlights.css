@@ -164,17 +164,3 @@ width:100%;
 .seemoreH:hover.seemoreH::before{
   width:100%;
 }
-
-.modal-content {
-  /* background-color: white; */
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}

@@ -233,8 +233,8 @@ function Home() {
           <img className="gglimeg" src={`http://localhost:5000/${info.info_image}`} alt="img"
           onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
               {showModal && (
-              <div className="modal-containerW" onClick={handleClose}>
-                <div className="modal-write">
+              <div className="modal-container" onClick={handleClose}>
+                <div className="modal-content">
                   <img src={modalImage} alt="Modal Image" />
                 </div>
               </div>
