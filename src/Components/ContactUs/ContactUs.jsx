@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TfiLinkedin, TfiFacebook } from "react-icons/tfi";
 import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const ContactForm = () => {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -82,14 +82,16 @@ const ContactForm = () => {
 
   return (
     <>
-      <section class="contact-section">
+      <section className="contact-section">
         <div className="rowss">
           <h3 className="thheader">Contact</h3>
-          <p className="para">Contact Me For Any Related Cyber Security Services.</p>
+          <p className="para">
+            Contact Me For Any Related Cyber Security Services.
+          </p>
           <form ref={form} onSubmit={onSubmit} className="form">
-            <div class="firstandlast">
-              <div class="firstname">
-                <label for="name">Name</label>
+            <div className="firstandlast">
+              <div className="firstname">
+                <label>Name</label>
 
                 <input
                   id="name"
@@ -102,11 +104,7 @@ const ContactForm = () => {
                   onChange={onChange}
                 />
               </div>
-              <div class="lastname">
-                <label for="lastname">
-                  {" "}
-                  <br />
-                </label>
+              <div className="lastname">
                 <input
                   id="lastname"
                   type="text"
@@ -120,8 +118,8 @@ const ContactForm = () => {
               </div>
             </div>
             <br />
-            <div class="name">
-              <label for="name">Company Name</label>
+            <div className="name">
+              <label>Company Name</label>
               <input
                 type="text"
                 id="company"
@@ -142,7 +140,7 @@ const ContactForm = () => {
                 {typedWords2} / {limit2} max charachters
               </div>
               <br />
-              <label for="Email">Email</label>
+              <label>Email</label>
               <input
                 id="email"
                 type="email"
@@ -156,7 +154,7 @@ const ContactForm = () => {
               />
               <br />
               <br />
-              <label for="name">Subject</label>
+              <label>Subject</label>
               <input
                 type="text"
                 id="Subject"
@@ -179,7 +177,7 @@ const ContactForm = () => {
             <br />
             <div className="Message">
               <label>Message</label>
-Contact
+
               <textarea
                 name="message"
                 placeholder="Your message"
@@ -198,7 +196,7 @@ Contact
             <div className="words">
               {typedWords} / {limit}
             </div>
-            <button  type="submit" value={"Submit"} className="submit">
+            <button type="submit" value={"Submit"} className="submit">
               Submit
             </button>
             <br />
@@ -236,4 +234,4 @@ Contact
   );
 };
 
-export default ContactForm;
+export default ContactUs;

@@ -1,194 +1,196 @@
 .rowss {
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 36%;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 36%;
+}
+
+.firstandlast {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 40px;
+}
+
+.contact-section .thheader {
+  margin: 0;
+  padding: 0;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  color: #6ad3b1;
+  font-size: 28px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 5px #6ad3b1;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.msgBox {
+  width: 100%;
+}
+
+.para {
+  color: white;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  display: block;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 880px;
+  height: 780px;
+  text-align: left;
+  padding-top: 66px;
+  /* padding: 10px 0; */
+}
+
+.contact-section form .name {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-section form .content label {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: "Varela Round";
+}
+.contact-section form .id {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  display: block;
+  font-family: "Archivo", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 20.8px;
+  text-decoration: none solid rgba(106, 211, 177);
+  text-align: left;
+  color: #6ad3b1;
+}
+
+
+.contact-section form .name input[name="email"],
+.contact-section form .name input[name="subject"],
+.contact-section form .name input[name="company"] {
+  height: 35px;
+  width: 100%;
+}
+
+.contact-section form .firstname input[name="firstName"],
+.contact-section form .lastname input[name="lastName"]{
+  height: 35px;
+  width: 100%;
+}
+
+#root > div > section > div > form > div.Message > textarea {
+  width: 100%;
+}
+
+.contact-section .submit {
+  margin-top: 45px;
+  margin-left: 1px;
+  color: white;
+  background-color: #11171d;
+  padding: 10px 55px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 5px rgba(125, 93, 93, 0.4);
+  font-family: "Archivo,sans-serif";
+  font-weight: 400;
+  font-size: 16px;
+  transition: all 0.3;
+}
+.submit:hover {
+  background: #6ad3b1;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.titles {
+  font-family: sans-serif;
+  border-top: 1px dashed rgba(106, 211, 117, 0.31);
+  color: #6ad3b1;
+  font-family: Archivo, sans-serif;
+  padding-top: 40px;
+  text-shadow: 0 0 5px;
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  word-spacing: 0px;
+  text-decoration: none solid rgba(106, 211, 177);
+  text-align: center;
+}
+
+.social-media .social {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 74px;
+}
+
+.social-media .social a {
+  font-size: 22px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #6ad3b1;
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+  margin: 5px;
+  color: #fff;
+  opacity: 0.7;
+  transition: all 0.5 linear;
+}
+
+.social-media .social a:hover {
+  background: #60c1a2;
+  opacity: 0.9;
+}
+
+.words {
+  color: #60c1a2;
+}
+
+@media only screen and (max-width: 768px) {
+  .rowss {
+    width: 80%;
   }
-  
-  .firstandlast {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 40px;
-  }
-  
-  .contact-section .thheader {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: "Archivo", sans-serif;
-    font-weight: 500;
-    color: #6ad3b1;
-    font-size: 28px;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 5px #6ad3b1;
-  }
-  
-  .para {
-    color: white;
-    font-family: "Archivo", sans-serif;
-    font-size: 14px;
-    line-height: 21px;
-    text-align: center;
-    display: block;
-  }
-  
+
   .contact-section form {
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 880px;
-    height: 780px;
-    text-align: left;
-    padding-top: 66px;
-    /* padding: 10px 0; */
   }
-  
-  .contact-section form .name {
-    width: 100%;
-    margin: 0 auto;
+
+  .para {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
   }
-  
-  .contact-section form .content label {
-    display: block;
-    padding: 0;
-    margin: 0;
-    font-family: "Varela Round";
+
+  .contact-section form input[type="text"],
+  .contact-section form input[type="email"],
+  .contact-section form input[type="subject"],
+  .contact-section form textarea {
+    height: 20px;
+    font-size: 12px;
   }
-  .contact-section form .id {
-    display: flex;
-    justify-content: space-between;
+
+  .submit {
+    padding: 8px 30px;
+    font-size: 14px;
   }
-  
-  label {
-    display: block;
-    font-family: "Archivo", sans-serif;
-    font-weight: 100;
-    font-size: 16px;
-    line-height: 20.8px;
-    text-decoration: none solid rgba(106, 211, 177);
-    text-align: left;
-    color: #6ad3b1;
-  }
-  
-  .contact-section form .firstname input[name="firstName"],
-  .contact-section form .lastname input[name="lastName"],
-  .contact-section form .name input[name="email"],
-  .contact-section form .name input[name="subject"],
-  .contact-section form .name input[name="company"] {
-    height: 35px;
-    width: 100%;
-  }
-  
-  
-  
-  #root > div > section > div > form > div.Message > textarea {
-    width: 100%;
-  }
-  
-  .contact-section .submit {
-    margin-top: 45px;
-    margin-left: 1px;
-    color: white;
-    background-color: #11171d;
-    padding: 10px 55px;
-    border: 1px solid #ffffff;
-    box-shadow: 0 0 5px rgba(125, 93, 93, 0.4);
-    font-family: "Archivo,sans-serif";
-    font-weight: 400;
-    font-size: 16px;
-    transition: all 0.3;
-  }
-  .submit:hover {
-    background: #6ad3b1;
-    border: 1px solid rgba(0, 0, 0, 0.7);
-  }
-  
-  .titles {
-    font-family: sans-serif;
-    border-top: 1px dashed rgba(106, 211, 117, 0.31);
-    color: #6ad3b1;
-    font-family: Archivo, sans-serif;
-    padding-top: 40px;
-    text-shadow: 0 0 5px;
-    font-weight: 500;
-    font-size: 20px;
-    display: block;
-    word-spacing: 0px;
-    text-decoration: none solid rgba(106, 211, 177);
-    text-align: center;
-  }
-  
-  .social-media .social {
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 74px;
-  }
-  
+
   .social-media .social a {
-    font-size: 22px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    margin-right: 5px;
-    display: inline-block;
-    border-radius: 50%;
-    border: 1px solid #6ad3b1;
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
-    margin: 5px;
-    color: #fff;
-    opacity: 0.7;
-    transition: all 0.5 linear;
+    font-size: 18px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
   }
-  
-  .social-media .social a:hover {
-    background: #60c1a2;
-    opacity: 0.9;
-  }
-  
-  .words {
-    color: #60c1a2;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .rowss {
-      width: 80%;
-    }
-  
-    .contact-section form {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .thheader {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-  
-    .para {
-      font-size: 12px;
-      line-height: 18px;
-      margin-bottom: 20px;
-    }
-  
-    .contact-section form input[type="text"],
-    .contact-section form input[type="email"],
-    .contact-section form input[type="subject"],
-    .contact-section form textarea {
-      height: 20px;
-      font-size: 12px;
-    }
-  
-    .submit {
-      padding: 8px 30px;
-      font-size: 14px;
-    }
-  
-    .social-media .social a {
-      font-size: 18px;
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-    }
-  }
-  
+}
