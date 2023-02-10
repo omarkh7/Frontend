@@ -19,8 +19,27 @@ function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
 
   return (
-    <div >
-Hello Team :p   </div>
+    <div>
+      <Header />
+      <Routes>
+        <Route
+          exact
+          path="/login-admin"
+          element={isLoggedIn == "true" ? <Dashboard /> : <Login />}
+        />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/biography" element={<Biography />} />
+        <Route path="achievements" element={<Achievements />} />
+        <Route path="acknowledgments" element={<Acknowledgments />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="certification" element={<Certification />} />
+        <Route path="contactus" element={<ContactUs />} />
+        <Route path="highlights" element={<Highlights />} />
+        <Route path="writeups" element={<Writeups />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
