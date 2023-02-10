@@ -19,25 +19,25 @@ function NavBar() {
 
       <ul className="topbar-ul">
         <li>
-          <a href="https://facebook.com">Facebook </a>
+          <a className="a" href="https://facebook.com">Facebook </a>
         </li>
         <li>
-          <a href="https://linkedin.com">Linked In</a>
+          <a className="a"  href="https://linkedin.com">Linked In</a>
         </li>
         <li>
-          <a href="https://twitter.com">Twitter</a>
+          <a className="a" href="https://twitter.com">Twitter</a>
         </li>
         <li>
-          <a href="https://hackerone.com">HackerOne</a>
+          <a className="a" href="https://hackerone.com">HackerOne</a>
         </li>
         <li>
-          <a href="https://bugcrowd.com">BugCrowd</a>
+          <a className="a" href="https://bugcrowd.com">BugCrowd</a>
         </li>
         <li>
-          <a href="https://youtube.com">Youtube</a>
+          <a className="a"  href="https://youtube.com">Youtube</a>
         </li>
         <li>
-          <a href="https://instagram.com">Instagram</a>
+          <a className="a"  href="https://instagram.com">Instagram</a>
         </li>
       </ul>
 
