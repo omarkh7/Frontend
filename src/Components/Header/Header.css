@@ -5,17 +5,17 @@
   width: 100%;
 }
 
-a{
+.linka{
   width: 90%;
   margin: auto;
 }
-.img {
+.imglogo {
 width: 90%;
 margin: auto;
 }
 
 @media (max-width: 767px) {
-  .img {
+  .imglogo {
    width: 50%;
    padding:5px 5px 5px 0px;
  margin:unset;

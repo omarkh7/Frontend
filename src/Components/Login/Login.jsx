@@ -28,10 +28,11 @@ function Login() {
         console.log(data, "userRegister");
         if ((data.status = 201)) {
           alert("login successful");
-          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("token", data.token);
           window.localStorage.setItem("loggedIn", true);
-
           window.location.href = "/login-admin";
+      
+     
         }
       });
   }

@@ -10,7 +10,7 @@ function Header() {
   return (
 
     <header className="header1">
-     <Link to="/"Home ><img className="img" src={img1}></img> </Link>
+     <Link className="linka" to="/"Home ><img className="imglogo" src={img1}></img> </Link>
       <NavBar />
     </header>
   );

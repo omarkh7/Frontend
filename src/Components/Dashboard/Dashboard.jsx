@@ -1,22 +1,21 @@
 import React from 'react'
 import "./Dashboard.css"
-function Dashboard() {
+import Sidebar from './Sidebar/Sidebar';
 
-  const logOut = () => {
-    window.localStorage.clear();
-    window.location.href = "./login-admin";
-  };
+
+
+const Dashboard=()=> {
+
+
+  const isLoggedIn = window.localStorage.getItem("loggedIn");
 
 
   return (
     <div>
-      DAshboard
-
-
-      <button onClick={logOut} className="logoutBTN">
-          Log Out
-        </button>
-    </div>
+    
+   
+    <Sidebar/>
+  </div>
   )
 }
 

@@ -33,7 +33,7 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          if (data.status === "ok") {
+          if (data.status === 201) {
             alert("Registration Successful");
           } else {
             alert("Something went wrong");
