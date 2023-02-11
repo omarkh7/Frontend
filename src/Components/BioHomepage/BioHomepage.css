@@ -77,11 +77,15 @@ h1 {
   .flexwidth,
   .fleximg {
     width: 100%;
+    text-align: center;
   }
   .container {
-    margin: 0px 18px;
+    margin: auto
   }
-
+.info{
+  justify-content: center;
+  align-items: center;
+}
   .img1 {
     width: 200px;
     height: 200px;

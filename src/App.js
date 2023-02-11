@@ -30,6 +30,7 @@ import DashSocialmedia from "./Components/Dashboard/Sidebar/Pages/DashSocialMedi
 import DashTalksWorkshops from "./Components/Dashboard/Sidebar/Pages/DashTalks&Workshops";
 import DashWorkexperience from "./Components/Dashboard/Sidebar/Pages/DashWorkexperience";
 import DashWritesupandproject from "./Components/Dashboard/Sidebar/Pages/DashWriteupsProjects";
+import PagenotFound from "./Components/Home/404 not Found/PagenotFound";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     window.localStorage.getItem("loggedIn")
@@ -44,6 +45,12 @@ function App() {
       <Header />
 
       <Routes>
+      <Route
+          exact
+          path="/*"
+          element={<PagenotFound/>}
+        />
+
         <Route
           exact
           path="/login-admin"

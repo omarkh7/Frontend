@@ -1,7 +1,10 @@
 .bodyi{
-    padding: 300px;
-    background-color: #11171d;
-    font-family: "Archivo", sans-serif;
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   flex-direction: column;
+   margin: auto;
+   padding: 8% 0;
 }
 
 .titlebio{
@@ -19,7 +22,6 @@
 .contentW{
     color: white ;
     padding-bottom: 7px;
-    font-weight: 100;
     /* border-bottom: 1px dashed rgba(106, 211, 177, 0.31); */
     
 }
@@ -30,6 +32,9 @@
     color: white ;
     padding-bottom: 15px;
     font-weight: 100;
+}
+#root > div > div.bodyi > div.fleximg{
+    width:100%;
 }
 
 @media only screen and (max-width: 768px) {

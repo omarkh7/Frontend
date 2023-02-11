@@ -48,7 +48,7 @@ function Highlights() {
         <p className='below'>Below are some Highlights and Milestones that I achieved during my career as a Security Researcher and Bug Bounty Hunter.</p>
 
 <p className='below'>(Click on the Image in order to view it clearly)</p>
-        <div className="containerHighlights">
+        <div className="containerHighlights11">
 
         {alldata.filter(info => info.info_category[0] === 'Highlights').map((info, index) => (
  <div key={info._id}>

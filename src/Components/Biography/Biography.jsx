@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import img1 from "../../assets/ahmad-laptop.jpg";
+
 import axios from 'axios';
 import "./Biography.css"
 
@@ -28,6 +30,9 @@ function Biography() {
     
     <div className='bodyi'>
       {/* Brief Info */}
+      <div className="fleximg">
+            <img className="img1" src={img1}></img>
+          </div>
           <h1 className='titlebio'>Brief Info</h1>
       {alldata.filter(info=>info.info_category[0]==='Brief Info').map(info => (
 

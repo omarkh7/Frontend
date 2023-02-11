@@ -80,6 +80,7 @@
   position: absolute;
   bottom: 0.6rem;
   margin-top: 1rem;
+  text-align: center;
   }
   .top-home{
   position: absolute;
@@ -155,9 +156,8 @@
 
   
   .all1{
-  padding: 2.5rem 0;
+  padding: 5rem 0;
   border-bottom: 1px #6ad3b27a dashed;
-  height: 33rem;
   }
   .container1 {
   margin: 0 auto;
@@ -322,7 +322,7 @@
   padding:0.6rem;
   color:#ffff;
   margin-top: 48rem;
-  /* margin-left: 300px; */
+
   }
   .seemore-high::before{
   content: "";
@@ -359,3 +359,53 @@
       z-index: 9999;
     }
   
+
+    @media (max-width: 767px) {
+
+    #root > div > div:nth-child(2) > div:nth-child(3) > div > div.row1{
+height: unset;
+
+    }
+    #root > div > div:nth-child(2) > div:nth-child(3) > div > div.row1::after{
+
+      height: 13.5rem;
+  }
+  #root > div > div:nth-child(2) > div:nth-child(6) > div > div > div::after{
+    height: 14rem;
+  }
+  #root > div > div:nth-child(2) > div:nth-child(2) > div {
+   
+    grid-template-columns:none;
+    grid-template-rows: 22rem 22rem 22rem 22rem 22rem 22rem  ;
+    margin-bottom: 20rem;
+  }
+
+  #root > div > div:nth-child(2) > div:nth-child(4) > div{
+    grid-template-columns:none;
+    grid-template-rows: 22rem 22rem ;
+  
+
+  }
+  #root > div > div:nth-child(2) > div:nth-child(4) > div > a{
+    margin-top: 47rem;
+  }
+
+  #root > div > div:nth-child(2) > div.all-high > div{
+
+    grid-template-columns:none;
+    grid-template-rows: 22rem 22rem 22rem 22rem  ;
+    margin-bottom: 15rem;
+  }
+
+  #root > div > div:nth-child(2) > div.all-high > div > a{
+    margin-top: 100rem;
+    right: 15%;
+  }
+  #root > div > div:nth-child(2) > div > div{
+    grid-template-columns:none;
+    grid-template-rows: 22rem 22rem  ;
+  }
+
+
+  
+}

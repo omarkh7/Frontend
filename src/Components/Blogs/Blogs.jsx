@@ -41,8 +41,8 @@ function Blogs() {
      {
     <div className="blog">
 
-      <div className="containerBlog">
-        <div className="container">
+      <div >
+        <div className="containerblog">
         {data.map((item,index) =>{
           return(
           

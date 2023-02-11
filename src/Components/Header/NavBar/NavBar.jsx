@@ -58,7 +58,7 @@ function NavBar() {
           <Link to="/certification"> Certification </Link>
         </li>
         <li>
-          <Link to="/highlights"> Highlghts </Link>
+          <Link to="/highlights"> Highlights </Link>
         </li>
         <li>
           <Link to="/writeups"> Writeups </Link>

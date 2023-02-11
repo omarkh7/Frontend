@@ -44,7 +44,12 @@
 }
 .icon, .link_text{
     font-size: 20px;
-}
+   }
+
+
+    .link{
+     
+        text-decoration: none ;}
 .logoutBTN {
     margin: 20px;
     padding: 1em;
@@ -62,11 +67,12 @@
 
 .sidebar{
     height: fit-content;
+    width: 100% !important;
 }
 
-    .compflex{
-display: block;
 
+    .compflex{
+flex-direction: column;
 
 
     }}    
