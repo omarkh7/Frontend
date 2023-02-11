@@ -40,7 +40,7 @@ function BioHomepage() {
             {alldata.filter(info=>info.info_category[0]==='Bio').map(info => (
         <div key={info._id}>
           <h1>{info.info_title}</h1>
-          <p>{info.info_description}</p>
+          <p className="p">{info.info_description}</p>
         </div>
       ))}
               <button className="button1">
@@ -59,3 +59,4 @@ function BioHomepage() {
 }
 
 export default BioHomepage;
+
