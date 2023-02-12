@@ -22,6 +22,7 @@ const Sidebar = ({ children }) => {
       icon: <FaSquare />,
     },
   ];
+
   const InfomenuItem = [
     {
       path: "/dashbriefinfo",
@@ -157,6 +158,7 @@ const Sidebar = ({ children }) => {
             </div>
           </NavLink>
         ))}
+
 
         <button
           style={{ display: isOpen ? "block" : "none" }}

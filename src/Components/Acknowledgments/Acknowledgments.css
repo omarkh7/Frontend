@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+
+    #root > div > div .all1 > div > div .row1 > div .boxImg2::after{
+
+height: inherit;
+}}

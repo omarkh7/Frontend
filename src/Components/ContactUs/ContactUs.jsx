@@ -58,7 +58,7 @@ const ContactForm = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/cont/addcontact", formData);
+      await axios.post("https://oportfolio.onrender.com/cont/addcontact", formData);
       await sendEmail(e);
 
       setFormData({

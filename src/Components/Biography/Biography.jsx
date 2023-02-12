@@ -3,12 +3,13 @@ import img1 from "../../assets/ahmad-laptop.jpg";
 
 import axios from 'axios';
 import "./Biography.css"
+import Scroll from '../Home/ScrolltoTop/Scroll';
 
 function Biography() {
 
   const [alldata, setAllData] = useState([]);
 
-  const apiURL = 'http://localhost:5000/info';
+  const apiURL = 'https://oportfolio.onrender.com/info';
 
 
   const fetchallData = async () => {
@@ -158,7 +159,7 @@ function Biography() {
         </div>
       ))}
        <div><p className='dotted'></p> </div>
-
+<Scroll/>
     </div>
   );
 };

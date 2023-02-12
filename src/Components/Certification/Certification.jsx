@@ -25,7 +25,7 @@ function Certification() {
     setShowModal(true);
   };
 
-  const apiURL = 'http://localhost:5000/info';
+  const apiURL = 'https://oportfolio.onrender.com/info';
 
   const fetchallData = async () => {
     try {
@@ -54,8 +54,8 @@ function Certification() {
                 <div className="box-img-home" >
                   <img
                     className="img-home"
-                    src={`http://localhost:5000/${info.info_image}`}
-                    alt="img"    onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}
+                    src={`https://oportfolio.onrender.com/${info.info_image}`}
+                    alt="img"    onClick={() => handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)}
                     
                   />
                    {showModal && (
@@ -66,7 +66,7 @@ function Certification() {
               </div>
             )}
 
-                {/* onClick={() => handleImageClick(`http://localhost:5000/${info.info_image}`)} */}
+                {/* onClick={() => handleImageClick(`https://oportfolio.onrender.com/${info.info_image}`)} */}
                 </div>
                 <div className="top-home"></div>
                 <div className="content-home">

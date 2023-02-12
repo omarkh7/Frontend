@@ -1,9 +1,9 @@
 import React from 'react'
-import '../Home/Home.css';
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import './Achievements.css'
 
 function Achievements() {
     const [alldata, setAllData] = useState([]);
@@ -21,7 +21,7 @@ function Achievements() {
       setShowModal(true);
     };
   
-    const apiURL = "http://localhost:5000/info";
+    const apiURL = "https://oportfolio.onrender.com/info";
   
     const fetchallData = async () => {
       try {
@@ -49,8 +49,8 @@ function Achievements() {
 
     <div className="row-home" key={index}>
         <div className="box-img-home">
-          <img className="img-home" src={`http://localhost:5000/${info.info_image}`} alt="img"
-          onClick={() => handleOpen(`http://localhost:5000/${info.info_image}`)}/>
+          <img className="img-home" src={`https://oportfolio.onrender.com/${info.info_image}`} alt="img"
+          onClick={() => handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)}/>
 
 {showModal && (
               <div className="modal-container" onClick={handleClose}>

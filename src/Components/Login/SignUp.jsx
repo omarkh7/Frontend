@@ -16,7 +16,7 @@ export default function SignUp() {
       e.preventDefault();
 
       console.log(name, email, password);
-      fetch("http://localhost:5000/users/", {
+      fetch("https://oportfolio.onrender.com/users/", {
         method: "POST",
         crossDomain: true,
         headers: {

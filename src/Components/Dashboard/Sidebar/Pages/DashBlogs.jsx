@@ -15,6 +15,7 @@ function DashBlogs() {
     title: "",
     description: "",
     image: null,
+    comment: "",
   });
 
   useEffect(() => {
@@ -26,30 +27,39 @@ function DashBlogs() {
     formData.append("title", newInfo.title);
     formData.append("description", newInfo.description);
     formData.append("image", infoImage);
+    formData.append("comment", newInfo.comment);
+
     //   console.table(formData);
-    await axios.post(`http://localhost:5000/blog/postblog`, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    await axios.post(
+      `https://oportfolio.onrender.com/blog/postblog`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     toast.success("Added Successfully", 2000);
     loadUsers();
     setNewInfo({
       title: "",
       description: "",
       image: "",
+      comment: "",
     });
     setInfoImage(null);
   };
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:5000/blog/getblog");
+    const result = await axios.get(
+      "https://oportfolio.onrender.com/blog/getblog"
+    );
     console.log(result.data);
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:5000/blog/deleteblog/${id}`);
+    await axios.delete(`https://oportfolio.onrender.com/blog/deleteblog/${id}`);
     toast.success("Deleted Successfully", 2000);
     loadUsers();
   };
@@ -64,9 +74,10 @@ function DashBlogs() {
     formData.append("title", selectedInfo.title);
     formData.append("description", selectedInfo.description);
     formData.append("image", infoImage);
+    formData.append("comment", selectedInfo.comment);
 
     await axios.put(
-      `http://localhost:5000/blog/updateblog/${selectedInfo._id}`,
+      `https://oportfolio.onrender.com/blog/updateblog/${selectedInfo._id}`,
       formData,
       {
         headers: {
@@ -112,6 +123,15 @@ function DashBlogs() {
               value={newInfo.image}
               onChange={(e) => setInfoImage(e.target.files[0])}
             />
+            <input
+              className="inputadd"
+              type="text"
+              value={newInfo.comment}
+              onChange={(e) =>
+                setNewInfo({ ...newInfo, comment: e.target.value })
+              }
+              placeholder="Add Comment"
+            />
 
             <button className="buttonadd" onClick={handleAdd}>
               Add
@@ -147,6 +167,14 @@ function DashBlogs() {
               onChange={(e) => setInfoImage(e.target.files[0])}
             />
 
+            <input
+              className="inputadd"
+              type="text"
+              value={selectedInfo.comment}
+              onChange={(e) =>
+                setSelectedInfo({ ...selectedInfo, comment: e.target.value })
+              }
+            />
             <div className="compflexbutton">
               <button className="buttonadd" onClick={updateUser}>
                 Save
@@ -168,6 +196,8 @@ function DashBlogs() {
                 <th scope="col">Title</th>
                 <th scope="col">description</th>
                 <th scope="col">Image</th>
+                <th scope="col">Comment</th>
+
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -178,6 +208,7 @@ function DashBlogs() {
                   <td>{info.title}</td>
                   <td>{info.description}</td>
                   <td>{info.image}</td>
+                  <td>{info.comment}</td>
 
                   <td>
                     <button

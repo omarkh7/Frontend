@@ -13,16 +13,12 @@ overflow-wrap: break-word;
 
 .containerblog{
   overflow-wrap: break-word;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
   width: 80%;
   margin:auto;
   gap:20px;
-
-}
-
-.blog{
 
 }
 
@@ -151,7 +147,7 @@ max-width: 300px;
 }
 
 .containerblog{
-  flex-direction: column;
+  grid-template-columns: auto;
 }
 
 .title {
@@ -175,4 +171,11 @@ max-width: 300px;
 .box-textd {
   font-size: 16px;
 }
+
+#root > div > div.bodyblog > div > div > div > div::before,#root > div > div.bodyblog > div > div > div > div::after{
+height: inherit;
+}
+
+
+
 }

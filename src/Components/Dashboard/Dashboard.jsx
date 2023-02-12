@@ -1,4 +1,5 @@
 import React from 'react'
+import Scroll from '../Home/ScrolltoTop/Scroll';
 import "./Dashboard.css"
 import Sidebar from './Sidebar/Sidebar';
 
@@ -15,6 +16,7 @@ const Dashboard=()=> {
     
    
     <Sidebar/>
+    <Scroll/>
   </div>
   )
 }

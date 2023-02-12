@@ -29,7 +29,7 @@ function DashWorkexperience() {
     formData.append("info_image", infoImage);
     formData.append("info_category", newInfo.info_category);
   
-    await axios.post(`http://localhost:5000/info`, formData, {
+    await axios.post(`https://oportfolio.onrender.com/info`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -46,13 +46,13 @@ function DashWorkexperience() {
   };
   
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:5000/info");
+    const result = await axios.get("https://oportfolio.onrender.com/info");
     console.log(result.data);
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:5000/info/${id}`);
+    await axios.delete(`https://oportfolio.onrender.com/info/${id}`);
     toast.success("Deleted Successfully", 2000);
     loadUsers();
   };
@@ -70,7 +70,7 @@ function DashWorkexperience() {
     formData.append("info_category", selectedInfo.info_category);
   
     await axios.put(
-      `http://localhost:5000/info/${selectedInfo._id}`,
+      `https://oportfolio.onrender.com/info/${selectedInfo._id}`,
       formData,
       {
         headers: {

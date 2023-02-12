@@ -5,6 +5,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import BioHomepage from "../BioHomepage/BioHomepage";
+import Scroll from "./ScrolltoTop/Scroll";
+
+
 
 function Home() {
   const [alldata, setAllData] = useState([]);
@@ -22,7 +25,7 @@ function Home() {
     setShowModal(true);
   };
 
-  const apiURL = "http://localhost:5000/info";
+  const apiURL = "https://oportfolio.onrender.com/info";
 
   const fetchallData = async () => {
     try {
@@ -53,10 +56,10 @@ function Home() {
                   <div className="box-img-home">
                     <img
                       className="img-home"
-                      src={`http://localhost:5000/${info.info_image}`}
+                      src={`https://oportfolio.onrender.com/${info.info_image}`}
                       alt="img"
                       onClick={() =>
-                        handleOpen(`http://localhost:5000/${info.info_image}`)
+                        handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)
                       }
                     />
 
@@ -162,10 +165,10 @@ function Home() {
                   <div className="box-img-home">
                     <img
                       className="img-home"
-                      src={`http://localhost:5000/${info.info_image}`}
+                      src={`https://oportfolio.onrender.com/${info.info_image}`}
                       alt="img"
                       onClick={() =>
-                        handleOpen(`http://localhost:5000/${info.info_image}`)
+                        handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)
                       }
                     />
                     {showModal && (
@@ -207,10 +210,10 @@ function Home() {
                   <div className="box-img-home">
                     <img
                       className="img-home"
-                      src={`http://localhost:5000/${info.info_image}`}
+                      src={`https://oportfolio.onrender.com/${info.info_image}`}
                       alt="img"
                       onClick={() =>
-                        handleOpen(`http://localhost:5000/${info.info_image}`)
+                        handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)
                       }
                     />
                     {showModal && (
@@ -247,10 +250,10 @@ function Home() {
                 <div className="row2">
                   <img
                     className="gglimeg"
-                    src={`http://localhost:5000/${info.info_image}`}
+                    src={`https://oportfolio.onrender.com/${info.info_image}`}
                     alt="img"
                     onClick={() =>
-                      handleOpen(`http://localhost:5000/${info.info_image}`)
+                      handleOpen(`https://oportfolio.onrender.com/${info.info_image}`)
                     }
                   />
                   {showModal && (
@@ -278,6 +281,7 @@ function Home() {
           </a>
         </div>
       </div>
+      <Scroll/>
     </div>
   );
 }
