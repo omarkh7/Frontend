@@ -1,10 +1,8 @@
-
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./Sidebar.css";
-import { FaTh, FaBars, FaCaretDown,FaSquare } from "react-icons/fa";
+import { FaTh, FaBars, FaCaretDown, FaSquare } from "react-icons/fa";
 
 const logOut = () => {
   window.localStorage.clear();
@@ -17,6 +15,13 @@ const Sidebar = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
+  const BlogmenuItem = [
+    {
+      path: "/dashblogs",
+      name: "Blogs",
+      icon: <FaSquare />,
+    },
+  ];
   const InfomenuItem = [
     {
       path: "/dashbriefinfo",
@@ -98,7 +103,7 @@ const Sidebar = ({ children }) => {
           onClick={toggleDropdown}
         >
           <div className="icon">
-            <FaSquare/>
+            <FaSquare />
           </div>
           <div
             style={{ display: isOpen ? "block" : "none" }}
@@ -112,6 +117,9 @@ const Sidebar = ({ children }) => {
               }}
             />
           </div>
+
+
+
         </NavLink>
         {isDropdownOpen &&
           InfomenuItem.map((item, index) => (
@@ -130,6 +138,25 @@ const Sidebar = ({ children }) => {
               </div>
             </NavLink>
           ))}
+
+<br></br>
+          
+        {BlogmenuItem.map((item, index) => (
+          <NavLink
+          className="link"
+            to={item.path}
+            key={index}
+            activeClassName="active"
+          >
+            <div className="icon">{item.icon}</div>
+            <div
+              style={{ display: isOpen ? "block" : "none" }}
+              className="link_text"
+            >
+              {item.name}
+            </div>
+          </NavLink>
+        ))}
 
         <button
           style={{ display: isOpen ? "block" : "none" }}
