@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,12 +6,15 @@ import "./Pages.css";
 import Sidebar from "../Sidebar";
 
 function DashNewsArticles() {
+  const form = useRef();
   const [infos, setUsers] = useState([]);
   const [selectedInfo, setSelectedInfo] = useState({});
   const [isUpdateMode, setIsUpdateMode] = useState(false);
+  const [infoImage, setInfoImage] = useState(null);
   const [newInfo, setNewInfo] = useState({
     info_title: "",
     info_description: "",
+    info_image: null,
     info_category: "News & Articles",
   });
 
@@ -20,16 +23,28 @@ function DashNewsArticles() {
   }, []);
 
   const handleAdd = async () => {
-    await axios.post(`http://localhost:5000/info`, newInfo);
+    const formData = new FormData();
+    formData.append("info_title", newInfo.info_title);
+    formData.append("info_description", newInfo.info_description);
+    formData.append("info_image", infoImage);
+    formData.append("info_category", newInfo.info_category);
+  
+    await axios.post(`http://localhost:5000/info`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     toast.success("Added Successfully", 2000);
     loadUsers();
     setNewInfo({
       info_title: "",
       info_description: "",
+      info_image: "",
       info_category: "News & Articles",
     });
+      setInfoImage(null);
   };
-
+  
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:5000/info");
     console.log(result.data);
@@ -48,20 +63,36 @@ function DashNewsArticles() {
   };
 
   const updateUser = async () => {
+    const formData = new FormData();
+    formData.append("info_title", selectedInfo.info_title);
+    formData.append("info_description", selectedInfo.info_description);
+    formData.append("info_image", infoImage);
+    formData.append("info_category", selectedInfo.info_category);
+  
     await axios.put(
       `http://localhost:5000/info/${selectedInfo._id}`,
-      selectedInfo
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
     );
     toast.success("Updated Successfully", 2000);
     loadUsers();
     setIsUpdateMode(false);
   };
-
   return (
     <div className="compflex">
       <Sidebar />
       <div className="container-info">
         <div>
+
+        <form
+            ref={selectedInfo}
+            className="contact-formm"
+            encType="multipart/form-data"
+          >
           <input
             className="inputadd"
             type="text"
@@ -80,6 +111,16 @@ function DashNewsArticles() {
             }
             placeholder="Enter Description"
           />
+              <input
+            className="inputadd"
+            type="file"
+            value={newInfo.info_image}
+            onChange={(e) =>
+              setInfoImage( e.target.files[0] )
+            }
+           
+          />
+        
           <input
             className="inputadd"
             type="text"
@@ -93,6 +134,7 @@ function DashNewsArticles() {
           <button className="buttonadd" onClick={handleAdd}>
             Add
           </button>
+          </form>
         </div>
 
         {isUpdateMode && (
@@ -116,7 +158,16 @@ function DashNewsArticles() {
                 })
               }
             />
-
+             <input
+              className="inputadd"
+              type="file"
+              value={newInfo.info_image}
+              onChange={(e) =>
+                setInfoImage(e.target.files[0],
+                )
+              }
+            />
+   
             <input
               className="inputadd"
               type="text"
@@ -148,17 +199,20 @@ function DashNewsArticles() {
                 <th scope="col">NB</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
+                <th scope="col">Image</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               {infos
-                .filter((info) => info.info_category[0] === "News & Articles")
+                .filter((info) => info.info_category[0] === "Certifications")
                 .map((info, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{info.info_title}</td>
                     <td>{info.info_description}</td>
+                    <td>{info.info_image}</td>
+
 
                     <td>
                       <button

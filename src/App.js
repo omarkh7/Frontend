@@ -15,7 +15,6 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import SignUp from "./Components/Login/SignUp";
 import Certification from "./Components/Certification/Certification";
 import { useEffect, useState } from "react";
-
 import { Route, Navigate } from "react-router-dom";
 import DashWritesups from "./Components/Dashboard/Sidebar/Pages/DashWriteups";
 import DashBriefInfo from "./Components/Dashboard/Sidebar/Pages/DashBriefinfo";
@@ -31,6 +30,7 @@ import DashTalksWorkshops from "./Components/Dashboard/Sidebar/Pages/DashTalks&W
 import DashWorkexperience from "./Components/Dashboard/Sidebar/Pages/DashWorkexperience";
 import DashWritesupandproject from "./Components/Dashboard/Sidebar/Pages/DashWriteupsProjects";
 import PagenotFound from "./Components/Home/404 not Found/PagenotFound";
+import DashBlogs from "./Components/Dashboard/Sidebar/Pages/DashBlogs";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     window.localStorage.getItem("loggedIn")
@@ -45,11 +45,7 @@ function App() {
       <Header />
 
       <Routes>
-      <Route
-          exact
-          path="/*"
-          element={<PagenotFound/>}
-        />
+        <Route exact path="/*" element={<PagenotFound />} />
 
         <Route
           exact
@@ -59,7 +55,7 @@ function App() {
         <Route
           exact
           path="/dashbriefinfo"
-          element={isLoggedIn === "true" ? <DashBriefInfo/> : <Login />}
+          element={isLoggedIn === "true" ? <DashBriefInfo /> : <Login />}
         />
         <Route
           exact
@@ -71,55 +67,64 @@ function App() {
           path="/dashwriteups"
           element={isLoggedIn === "true" ? <DashWritesups /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashachievements"
           element={isLoggedIn === "true" ? <DashAchievements /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dasharticles"
           element={isLoggedIn === "true" ? <DashMyArticles /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashbio"
           element={isLoggedIn === "true" ? <DashBio /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashendorsements&compliments"
           element={isLoggedIn === "true" ? <DashEndcomp /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashhighlights"
-          element={isLoggedIn === "true" ? <DashHighlights/> : <Login />}
+          element={isLoggedIn === "true" ? <DashHighlights /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashwnews&articles"
           element={isLoggedIn === "true" ? <DashNewsArticles /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashsocialmediaaccounts"
           element={isLoggedIn === "true" ? <DashSocialmedia /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashtalks&workshops"
           element={isLoggedIn === "true" ? <DashTalksWorkshops /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashworkexperience"
           element={isLoggedIn === "true" ? <DashWorkexperience /> : <Login />}
         />
-          <Route
+        <Route
           exact
           path="/dashwriteupsprojects"
-          element={isLoggedIn === "true" ? <DashWritesupandproject /> : <Login />}
+          element={
+            isLoggedIn === "true" ? <DashWritesupandproject /> : <Login />
+          }
+        />
+           <Route
+          exact
+          path="/dashblogs"
+          element={
+            isLoggedIn === "true" ? <DashBlogs /> : <Login />
+          }
         />
 
         <Route path="/" element={<Home />} />
@@ -139,4 +144,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

@@ -70,7 +70,7 @@ function Certification() {
                 </div>
                 <div className="top-home"></div>
                 <div className="content-home">
-                  <p>{info.info_description}</p>
+                  <p>{info.info_title}</p>
                 </div>
                 <br />
                 <br />
